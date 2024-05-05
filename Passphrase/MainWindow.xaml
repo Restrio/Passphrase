@@ -1,0 +1,115 @@
+﻿<Window x:Name="window" x:Class="Passphrase.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Passphrase"
+        mc:Ignorable="d"
+        Title="Passphrase"
+        Height="120"
+        MinHeight="120"
+        Width="200"
+        MinWidth="200"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        ResizeMode="CanResizeWithGrip"
+        Background="#FF494034"
+        BorderBrush="#FF1f1C18"
+        BorderThickness="2"
+        Topmost="True">
+
+    <Grid Margin="5 10 10 5">
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="40" />
+            <RowDefinition MinHeight="40" Height="AUTO" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+
+        <Button
+            Width="20"
+            x:Name="Close"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            HorizontalAlignment="Center"
+            Grid.Row="0"
+            Grid.Column="1"
+            Click="CloseButton_Click"
+            Height="20"
+            VerticalAlignment="Top">
+            X
+        </Button>
+
+        <TextBox
+            x:Name="Passphrase"
+            Grid.Row="0"
+            Grid.Column="0"
+            AcceptsReturn="True"
+            Margin="5 -7 6 0"
+            KeyUp="OnPassphraseKeyUp"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            VerticalContentAlignment="Center"
+            BorderThickness="0"
+            TextWrapping="WrapWithOverflow"
+            Background="Transparent"
+            FontWeight="Bold"
+            FontSize="16"
+            FontFamily="Arial"
+            Foreground="#FFFF981F">
+            TestValue
+        </TextBox>
+
+        <Border
+            Grid.Row="0"
+            Grid.Column="0"
+            BorderThickness="0 0 0 1"
+            BorderBrush="#FF1f1C18"
+            Margin="0,0,5,0">
+
+        </Border>
+
+        <TextBlock
+            x:Name="Date"
+            Margin="5 9 6 1"
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="{Binding Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Stretch"
+            TextWrapping="WrapWithOverflow"
+            Background="Transparent"
+            FontWeight="Bold"
+            FontSize="16"
+            FontFamily="Arial" Foreground="#FFFF981F">
+            TestValue
+        </TextBlock>
+
+        <Slider
+            x:Name="OpacitySlider"
+            Grid.Row="1"
+            Grid.Column="1"
+            Orientation="Vertical"
+            Margin="0 0 0 0"
+            Height="AUTO"
+            Width="AUTO"
+            Minimum="0.1"
+            Maximum="1"
+            MouseMove="OpacitySliderMouseMove"
+            Background="Transparent">
+        </Slider>
+
+        <Border
+            Grid.Row="1"
+            Grid.Column="0"
+            BorderThickness="0 1 0 0"
+            BorderBrush="#FF1f1C18"
+            Margin="0,0,5,0">
+            
+        </Border>
+
+    </Grid>
+</Window>
